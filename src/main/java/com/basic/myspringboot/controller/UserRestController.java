@@ -69,7 +69,7 @@ public class UserRestController {
         User user = userRepository.findById(id)
                 .orElseThrow(getUserNotFound());
         userRepository.delete(user);
-        return ResponseEntity.ok("User가 정상적으로 삭제되었습니다!!");
+        return ResponseEntity.ok("User가 정상적으로 삭제 되었습니다!!");
 
     }
 }
