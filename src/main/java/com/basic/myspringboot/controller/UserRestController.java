@@ -50,7 +50,7 @@ public class UserRestController {
 //        return existUser;
 //    }
 
-    @PatchMapping("/{email}")
+    @PatchMapping("/{email}/")
     public User updateUser(@PathVariable String email, @RequestBody User userDetail) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new BusinessException("User Not Found", HttpStatus.NOT_FOUND));
