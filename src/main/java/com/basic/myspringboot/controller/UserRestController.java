@@ -35,7 +35,11 @@ public class UserRestController {
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return userRepository.findById(id) //Optional<User>
-                .orElseThrow(() -> new BusinessException("User Not Found", HttpStatus.NOT_FOUND));
+                .orElseThrow(getUserNotFound());
+    }
+
+    private static Supplier<BusinessException> getUserNotFound() {
+        return () -> new BusinessException("User Not Found", HttpStatus.NOT_FOUND);
     }
 //    public User getUser(@PathVariable Long id) {
 //        Optional<User> optionalUser = userRepository.findById(id);
@@ -53,7 +57,7 @@ public class UserRestController {
     @PatchMapping("/{email}/")
     public User updateUser(@PathVariable String email, @RequestBody User userDetail) {
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new BusinessException("User Not Found", HttpStatus.NOT_FOUND));
+                .orElseThrow(getUserNotFound());
         user.setName(userDetail.getName());
         User updatedUser = userRepository.save(user);
         return updatedUser;
