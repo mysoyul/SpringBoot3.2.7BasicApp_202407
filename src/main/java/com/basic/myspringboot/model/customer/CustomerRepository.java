@@ -1,5 +1,6 @@
-package com.basic.myspringboot.model;
+package com.basic.myspringboot.model.customer;
 
+import com.basic.myspringboot.model.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

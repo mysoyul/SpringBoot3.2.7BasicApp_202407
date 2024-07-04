@@ -1,5 +1,7 @@
 package com.basic.myspringboot.model;
 
+import com.basic.myspringboot.model.customer.Customer;
+import com.basic.myspringboot.model.customer.CustomerRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

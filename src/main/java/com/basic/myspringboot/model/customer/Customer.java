@@ -1,4 +1,4 @@
-package com.basic.myspringboot.model;
+package com.basic.myspringboot.model.customer;
 
 import jakarta.persistence.*;
 import lombok.Getter;
